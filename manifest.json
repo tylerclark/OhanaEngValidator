@@ -1,0 +1,19 @@
+{
+	"name": "OhanaEng Validator",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"description": "",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://gus.lightning.force.com//*", "https://gus.my.salesforce.com/"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		}
+	],
+	"browser_action": {},
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"permissions": ["activeTab"]
+}
